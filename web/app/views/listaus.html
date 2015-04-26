@@ -1,0 +1,9 @@
+<div ng-controller="MovieController">
+	<h1>Elokuvakirjasto</h1>
+	<ul>
+		<li ng-repeat="movie in movies">
+			<strong>{{movie.name}} ({{movie.release}})</strong>, director: {{movie.director}}
+			<p>{{movie.description}}</p>
+		</li>
+	</ul>
+</div>

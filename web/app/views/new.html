@@ -1,0 +1,36 @@
+<div ng-controller="AddMovieController">
+	<form name="addMovieForm">
+		<h1>Add a new movie</h1>
+		<p>
+			<label>Name</label>
+			<input name="name" type="text" ng-model="name" required>
+			<span ng-show="addMovieForm.name.$invalid && addMovieForm.name.$dirty">
+				Movie name must not be empty!
+			</span>
+		</p>	
+		<p>
+			<label>Director</label>
+			<input name="director" type="text" ng-model="director" required>
+			<span ng-show="addMovieForm.director.$invalid && addMovieForm.director.$dirty">
+				Director name must not be empty!
+			</span>
+		</p>	
+		<p>
+			<label>Release year</label>
+			<input name="release" type="text" ng-model="release" required>
+			<span ng-show="addMovieForm.release.$invalid && addMovieForm.release.$dirty">
+				Release year name must not be empty!
+			</span>
+		</p>	
+		<p>
+			<label>Description</label>
+			<textarea name="description" type="text" ng-model="description" required></textarea>
+			<span ng-show="addMovieForm.description.$invalid && addMovieForm.description.$dirty">
+				Description name must not be empty!
+			</span>
+		</p>	
+		<p>
+			<button type="submit" ng-click="addMovies()" ng-disabled="addMovieForm.$invalid">Add</button>
+		</p>
+	</form>
+</div>
