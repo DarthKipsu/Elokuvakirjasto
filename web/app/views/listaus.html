@@ -1,9 +1,13 @@
 <div ng-controller="MovieController">
 	<h1>Elokuvakirjasto</h1>
+	<a ng-href="#/movies/new">Lisää uusi elokuva</a>
 	<ul>
 		<li ng-repeat="movie in movies">
-			<strong>{{movie.name}} ({{movie.release}})</strong>, director: {{movie.director}}
+			<a ng-href="#/movies/{{movie.$id}}"<strong>{{movie.name}} ({{movie.release}})</strong></a>,
+				ohjaaja: {{movie.director}}
 			<p>{{movie.description}}</p>
+			<p><a href="#/movies/{{movie.$id}}/edit">Muokkaa</a>
+				<a href="#/movies" ng-click="removeMovie($index)">Poista</a></p>
 		</li>
 	</ul>
 </div>

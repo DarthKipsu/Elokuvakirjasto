@@ -1,0 +1,35 @@
+<form name="showMovieForm">
+	<h1>Edit {{movie.name}}</h1>
+	<p>
+		<label>Name</label>
+		<input name="name" type="text" ng-model="movie.name" required>
+		<span ng-show="addMovieForm.name.$invalid && addMovieForm.name.$dirty">
+			Movie name must not be empty!
+		</span>
+	</p>	
+	<p>
+		<label>Director</label>
+		<input name="director" type="text" ng-model="movie.director" required>
+		<span ng-show="addMovieForm.director.$invalid && addMovieForm.director.$dirty">
+			Director name must not be empty!
+		</span>
+	</p>	
+	<p>
+		<label>Release year</label>
+		<input name="release" type="text" ng-model="movie.release" required>
+		<span ng-show="addMovieForm.release.$invalid && addMovieForm.release.$dirty">
+			Release year name must not be empty!
+		</span>
+	</p>	
+	<p>
+		<label>Description</label>
+		<textarea name="description" type="text" ng-model="movie.description" required></textarea>
+		<span ng-show="addMovieForm.description.$invalid && addMovieForm.description.$dirty">
+			Description name must not be empty!
+		</span>
+	</p>	
+	<p>
+		<button type="submit" ng-click="editMovie(movie)" ng-disabled="addMovieForm.$invalid">Add</button>
+	</p>
+	<a ng-href="#/movies">Takaisin</a>
+</form>
