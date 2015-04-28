@@ -6,6 +6,10 @@ MyApp.config(function($routeProvider){
 			controller: 'MovieController',
 			templateUrl: 'app/views/listaus.html'
 		})
+		.when('/movies/search', {
+			controller: 'SearchMovieController',
+			templateUrl: 'app/views/search.html'
+		})
 		.when('/movies/new', {
 			controller: 'AddMovieController',
 			templateUrl: 'app/views/new.html'
@@ -22,3 +26,7 @@ MyApp.config(function($routeProvider){
 			redirectTo: '/movies'
 		})
 });
+
+MyApp.config(['$httpProvider', function($httpProvider) {
+  delete $httpProvider.defaults.headers.common["X-Requested-With"]
+}]);

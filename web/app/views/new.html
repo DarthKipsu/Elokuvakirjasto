@@ -1,36 +1,36 @@
 <div ng-controller="AddMovieController">
 	<form name="addMovieForm">
-		<h1>Add a new movie</h1>
+		<h1>Lisää uusi elokuva</h1>
 		<p>
-			<label>Name</label>
+			<label>Nimi</label>
 			<input name="name" type="text" ng-model="name" required>
 			<span ng-show="addMovieForm.name.$invalid && addMovieForm.name.$dirty">
-				Movie name must not be empty!
+				Nimi ei saa olla tyhjä
 			</span>
 		</p>	
 		<p>
-			<label>Director</label>
+			<label>Ohjaaja</label>
 			<input name="director" type="text" ng-model="director" required>
 			<span ng-show="addMovieForm.director.$invalid && addMovieForm.director.$dirty">
-				Director name must not be empty!
+				Ohjaaja ei saa olla tyhjä
 			</span>
 		</p>	
 		<p>
-			<label>Release year</label>
+			<label>Julkaisuvuosi</label>
 			<input name="release" type="text" ng-model="release" required>
 			<span ng-show="addMovieForm.release.$invalid && addMovieForm.release.$dirty">
-				Release year name must not be empty!
+				Julkaisuvuosi ei saa olla tyhjä
 			</span>
 		</p>	
 		<p>
-			<label>Description</label>
+			<label>Kuvaus</label>
 			<textarea name="description" type="text" ng-model="description" required></textarea>
 			<span ng-show="addMovieForm.description.$invalid && addMovieForm.description.$dirty">
-				Description name must not be empty!
+				Kuvaus ei saa olla tyhjä
 			</span>
 		</p>	
 		<p>
-			<button type="submit" ng-click="addMovies()" ng-disabled="addMovieForm.$invalid">Add</button>
+			<button type="submit" ng-click="addMovies()" ng-disabled="addMovieForm.$invalid">Lisää</button>
 		</p>
 		<a ng-href="#/movies">Takaisin</a>
 	</form>

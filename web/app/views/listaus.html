@@ -1,6 +1,7 @@
 <div ng-controller="MovieController">
 	<h1>Elokuvakirjasto</h1>
 	<a ng-href="#/movies/new">Lisää uusi elokuva</a>
+	<a ng-href="#/movies/search">Hae elokuvia open movie databasesta</a>
 	<ul>
 		<li ng-repeat="movie in movies">
 			<a ng-href="#/movies/{{movie.$id}}"<strong>{{movie.name}} ({{movie.release}})</strong></a>,
