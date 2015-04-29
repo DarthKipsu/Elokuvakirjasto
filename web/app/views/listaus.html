@@ -1,14 +1,17 @@
-<div ng-controller="MovieController">
-	<h1>Elokuvakirjasto</h1>
-	<a ng-href="#/movies/new">Lisää uusi elokuva</a>
-	<a ng-href="#/movies/search">Hae elokuvia open movie databasesta</a>
-	<ul>
-		<li ng-repeat="movie in movies">
-			<a ng-href="#/movies/{{movie.$id}}"<strong>{{movie.name}} ({{movie.release}})</strong></a>,
-				ohjaaja: {{movie.director}}
-			<p>{{movie.description}}</p>
-			<p><a href="#/movies/{{movie.$id}}/edit">Muokkaa</a>
-				<a href="#/movies" ng-click="removeMovie($index)">Poista</a></p>
-		</li>
-	</ul>
-</div>
+<h1>Elokuvakirjasto</h1>
+<p>
+	<a ng-href="#/signin" ng-if="!auth">Luo uusi käyttäjä</a>
+	<a href="#/login" ng-if="!auth">Kirjaudu sisään</a>
+	<a href="#/" ng-controller="UserController" ng-click="logOut()" ng-if="auth">Kirjaudu ulos</a>
+</p>
+<a ng-href="#/movies/new" ng-if="auth">Lisää uusi elokuva</a>
+<a ng-href="#/movies/search">Hae elokuvia open movie databasesta</a>
+<ul>
+	<li ng-repeat="movie in movies">
+		<a ng-href="#/movies/{{movie.$id}}"<strong>{{movie.name}} ({{movie.release}})</strong></a>,
+		ohjaaja: {{movie.director}}
+		<p>{{movie.description}}</p>
+		<p ng-if="auth"><a href="#/movies/{{movie.$id}}/edit">Muokkaa</a>
+			<a href="#/movies" ng-click="removeMovie($index)">Poista</a></p>
+	</li>
+</ul>

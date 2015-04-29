@@ -1,0 +1,23 @@
+<form name="registerUserForm">
+	<h1>Luo uusi käyttäjätili</h1>
+	<p>{{message}}</p>
+	<p>
+		<label>Sähköposti</label>
+		<input name="email" type="email" ng-model="newEmail" required>
+		<span ng-show="registerUserForm.email.$invalid && registerUserForm.email.$dirty">
+			Sähköpostiosoite vaaditaan
+		</span>
+	</p>	
+	<p>
+		<label>Salasana</label>
+		<input name="password" type="password" ng-model="newPassword" required>
+		<span ng-show="registerUserForm.password.$invalid && registerUserForm.password.$dirty">
+			Salasana vaaditaan
+		</span>
+	</p>	
+
+	<p>
+		<button type="submit" ng-click="register()" ng-disabled="registerUserForm.$invalid">Luo käyttäjä</button>
+	</p>
+	<a ng-href="#/movies">Takaisin</a>
+</form>
