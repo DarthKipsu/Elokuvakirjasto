@@ -1,35 +1,32 @@
 <form name="showMovieForm">
 	<h1>Muokkaa {{movie.name}} elokuvaa</h1>
-	<p>
+	<div class="form-group">
 		<label>Nimi</label>
-		<input name="name" type="text" ng-model="movie.name" required>
+		<input class="form-control" name="name" type="text" ng-model="movie.name" required>
 		<span ng-show="addMovieForm.name.$invalid && addMovieForm.name.$dirty">
 			Nimi ei saa olla tyhjä
 		</span>
-	</p>	
-	<p>
+	</div>	
+	<div class="form-group">
 		<label>Ohjaaja</label>
-		<input name="director" type="text" ng-model="movie.director" required>
+		<input class="form-control" name="director" type="text" ng-model="movie.director" required>
 		<span ng-show="addMovieForm.director.$invalid && addMovieForm.director.$dirty">
 			Ohjaaja ei saa olla tyhjä
 		</span>
-	</p>	
-	<p>
+	</div>	
+	<div class="form-group">
 		<label>Julkaisuvuosi</label>
-		<input name="release" type="text" ng-model="movie.release" required>
+		<input class="form-control" name="release" type="text" ng-model="movie.release" required>
 		<span ng-show="addMovieForm.release.$invalid && addMovieForm.release.$dirty">
 			Julkaisuvuosi ei saa olla tyhjä
 		</span>
-	</p>	
-	<p>
+	</div>	
+	<div class="form-group">
 		<label>Kuvaus</label>
-		<textarea name="description" type="text" ng-model="movie.description" required></textarea>
+		<textarea class="form-control" name="description" type="text" ng-model="movie.description" required></textarea>
 		<span ng-show="addMovieForm.description.$invalid && addMovieForm.description.$dirty">
 			Kuvaus ei saa olla tyhjä
 		</span>
-	</p>	
-	<p>
-		<button type="submit" ng-click="editMovie(movie)" ng-disabled="addMovieForm.$invalid">Muokkaa</button>
-	</p>
-	<a ng-href="#/movies">Takaisin</a>
+	</div>	
+	<button class="btn btn-default" type="submit" ng-click="editMovie(movie)" ng-disabled="addMovieForm.$invalid">Muokkaa</button>
 </form>

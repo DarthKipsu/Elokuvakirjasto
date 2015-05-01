@@ -1,5 +1,14 @@
 MyApp.controller('UserController', function($scope, $location, AuthenticationService){
 	$scope.message = ""
+	AuthenticationService.checkLoggedIn().then(function(value) {
+		$scope.auth = value
+	})
+
+	$scope.$on('loginChange', function(event, data) {
+		AuthenticationService.checkLoggedIn().then(function(value) {
+			$scope.auth = value
+		})
+	})
 	
 	$scope.logIn = function(){
 		AuthenticationService.logUserIn($scope.email, $scope.password)

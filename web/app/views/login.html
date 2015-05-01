@@ -1,23 +1,20 @@
 <form name="loginUserForm">
 	<h1>Kirjaudu sisään</h1>
 	<p>{{message}}</p>
-	<p>
+	<p class="form-group">
 		<label>Sähköposti</label>
-		<input name="email" type="email" ng-model="email" required>
+		<input class="form-control" name="email" type="email" ng-model="email" required>
 		<span ng-show="loginUserForm.email.$invalid && loginUserForm.email.$dirty">
 			Sähköpostiosoite vaaditaan
 		</span>
 	</p>	
-	<p>
+	<p class="form-group">
 		<label>Salasana</label>
-		<input name="password" type="password" ng-model="password" required>
+		<input class="form-control" name="password" type="password" ng-model="password" required>
 		<span ng-show="loginUserForm.password.$invalid && loginUserForm.password.$dirty">
 			Salasana vaaditaan
 		</span>
 	</p>	
 
-	<p>
-		<button type="submit" ng-click="logIn()" ng-disabled="loginUserForm.$invalid">Kirjaudu</button>
-	</p>
-	<a ng-href="#/movies">Takaisin</a>
+	<button class="btn btn-default" type="submit" ng-click="logIn()" ng-disabled="loginUserForm.$invalid">Kirjaudu</button>
 </form>

@@ -1,17 +1,18 @@
 <h1>Elokuvakirjasto</h1>
-<p>
-	<a ng-href="#/signin" ng-if="!auth">Luo uusi käyttäjä</a>
-	<a href="#/login" ng-if="!auth">Kirjaudu sisään</a>
-	<a href="#/" ng-controller="UserController" ng-click="logOut()" ng-if="auth">Kirjaudu ulos</a>
-</p>
-<a ng-href="#/movies/new" ng-if="auth">Lisää uusi elokuva</a>
-<a ng-href="#/movies/search">Hae elokuvia open movie databasesta</a>
-<ul>
-	<li ng-repeat="movie in movies">
-		<a ng-href="#/movies/{{movie.$id}}"<strong>{{movie.name}} ({{movie.release}})</strong></a>,
-		ohjaaja: {{movie.director}}
-		<p>{{movie.description}}</p>
-		<p ng-if="auth"><a href="#/movies/{{movie.$id}}/edit">Muokkaa</a>
-			<a href="#/movies" ng-click="removeMovie($index)">Poista</a></p>
-	</li>
-</ul>
+<table class="table">
+	<tr>
+		<th>Nimi</th>
+		<th>Ohjaaja</th>
+		<th>Julkaisuvuosi</th>
+		<th ng-show="auth"></th>
+	</tr>
+	<tr ng-repeat="movie in movies">
+		<td><a ng-href="#/movies/{{movie.$id}}">{{movie.name}}</a></td>
+		<td>{{movie.director}}</td>
+		<td>{{movie.release}}</td>
+		<td ng-show="auth">
+			<a class="btn btn-default" href="#/movies/{{movie.$id}}/edit">Muokkaa</a>
+			<a class="btn btn-danger" href="#/movies/" ng-click="removeMovie($index)">Poista</a>
+		</td>
+	</tr>
+</table>
